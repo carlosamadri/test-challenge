@@ -1,19 +1,25 @@
 // Imports small array of users
 // Pretend it's an API request
-const users = require('./data');
+const users = require('./data.js');
 
 // Fetches all users
-const getUsers = () => {
-    return users;
-}
 
 // Filters users by specific ID
-const getUser = id => {
-    return users.find(user => user.id === id)
+function getUserById(id) {
+    return users.find(user => user.id === id);
+}
+
+function getUserByUsername(username) {
+    return users.find(user => user.username === username);
+}
+
+function validatePassword(userId, password){
+    const user = getUserById(id);
+    return user ? user.password === password : false;
 }
 
 
 // test
 // console.log(getUser(3));
 
-module.exports = {getUsers , getUser};
+module.exports = {getUserById , getUserByUsername, validatePassword};

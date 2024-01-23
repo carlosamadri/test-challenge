@@ -3,5 +3,5 @@ const conditions = require('../fizzBuzz.js')
 const { number } = require('yargs')
 
 test('adds number & divides', () => {
-    expect(conditions(50)).toBe('Buzz');
+    expect(conditions(15)).toBe('FizzBuzz');
 })
